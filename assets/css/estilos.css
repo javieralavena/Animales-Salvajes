@@ -7,7 +7,7 @@ body {
   background-image: url("../imgs/fondo.jpg");
   background-position: bottom;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   height: 100vh;
   padding: 100px;
 }
@@ -20,6 +20,8 @@ body {
   background-position: top;
   background-size: contain;
   background-repeat: no-repeat;
+  display:flex;
+  align-content: center;
 }
 
 
@@ -27,7 +29,9 @@ body {
 
 #Animales {
   height: 100%;
+  width: 100%;
   background: #f0f0f0;
+  display: flex;
 }
 
 #Animales div div {
@@ -38,9 +42,6 @@ body {
   box-shadow: 0px 1px 5px 1px;
 }
 
-.participante {
-  max-width: 30%;
-}
 
 /* Modal */
 

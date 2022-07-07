@@ -32,8 +32,8 @@ const getImagenPrevia = (data) => {
         const nombreAnimal = document.getElementById("animal").value
         const encontrarImagen = animales.find((animal) => animal.name == nombreAnimal).imagen
         const imagenAnimal = document.getElementById("preview")
-        document.getElementById("preview").setAttribute("class", "mx-auto")
-        imagenAnimal.innerHTML = `<img height="200" src="assets/imgs/${encontrarImagen}">`
+        document.getElementById("preview").setAttribute("class", "mx-auto" )
+        imagenAnimal.innerHTML = `<img width="100%" src="assets/imgs/${encontrarImagen}">`
     })
 }
 
@@ -95,10 +95,10 @@ const imprimirTabla = () => {
 
     animalesArreglo.forEach((animal, i) => {
 
-        animalesTabla.innerHTML += `<div class="col-sm-12 col-md-3"> 
-        <div class="card bg-secondary " style="height: 14rem;">
-            <img style="width: 100%; height:100%" src="assets/imgs/${animal.img}" class="card-img-top" alt="${animal.nombre}" onClick="showModal(${i})" data-toggle="modal" data-target="#exampleModal" >
-            <div class="card-footer">
+        animalesTabla.innerHTML += `<div class="col-12 col-md-4"> 
+        <div class="card bg-secondary" style="height: 14rem;">
+            <img height="75%" src="assets/imgs/${animal.img}" class="card-img-top" alt="${animal.nombre}" onClick="showModal(${i})" data-toggle="modal" data-target="#exampleModal" >
+            <div class="card">
                 <audio type ="audio/mp3"  controls class="w-100" src="assets/sounds/${animal.sonido}"></audio>
             </div>
         </div>
@@ -110,11 +110,11 @@ const imprimirTabla = () => {
 
 window.showModal = (i) => {
     let modalBody = document.querySelector('.modal-body')
-    
+
     let animal = animalesArreglo[i]
 
     modalBody.innerHTML = `
-        <div class="card mx-auto  bg-dark  border-dark text-light" style="width: 22rem;">
+        <div class="card mx-auto  bg-dark  border-dark text-light" style="width: 100%;">
         <img src="assets/imgs/${animal.img}" class="card-img-top">
         <div class="card-body text-center">
             <p class="fw-bold">${animal.edad}</p>
@@ -122,14 +122,14 @@ window.showModal = (i) => {
             <hr>
             <p>${animal.comentarios}</p>
         </div>
-    </div>}`
+    </div>`
 
 }
 
 //función para limpiar el formulario
-function limpiar(){
+function limpiar() {
 
     let options = document.querySelectorAll("option")
     options.forEach((option) => (option.selected = option.defaultSelected))
-    document.getElementById('comentarios').value=""
+    document.getElementById('comentarios').value = ""
 }
